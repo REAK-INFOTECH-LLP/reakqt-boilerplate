@@ -12,22 +12,25 @@ Window {
     height: 480
 
     // Demo code goes here
-    StackLayout {
+    StackView {
         id: mainLayout
         anchors.fill: parent
-        currentIndex: 1
-        Rectangle {
-            color: 'teal'
-            implicitWidth: 200
-            implicitHeight: 200
-        }
-        Rectangle {
-            color: 'plum'
-            implicitWidth: 300
-            implicitHeight: 200
-            MouseArea {
-                anchors.fill: parent
-                onClicked: mainLayout.push(licenseBrowser)
+        Column {
+            anchors.fill: parent
+
+            Rectangle {
+                color: 'green'
+                implicitWidth: 200
+                implicitHeight: 200
+            }
+            Rectangle {
+                color: 'red'
+                implicitWidth: 300
+                implicitHeight: 200
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: mainLayout.push(licenseBrowser)
+                }
             }
         }
     }
@@ -39,7 +42,12 @@ Window {
 "<p>Dianiux Innova SL <p><a  href=\"https://www.dianiuxinnova.com\">https://www.dianiuxinnova.com</a></p>"
 
             urlBinaries:"https://github.com/dianiux-innova/qtlgplapptemplateExamples" //"qrc:/release.zip"
-            onBack:mainLayout.pop() //back button
+            onBack: {
+                console.log("POP OUT ....")
+                // We can pop for depth larger than 1 or use clear if the depth is 1 or lower
+                // mainLayout.pop()
+                mainLayout.clear() //back button
+            }
         }
     }
 

@@ -1,7 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>CustomButton.qml</file>
         <file>qtlegal/SoftwareLicenses/Scxml calculator.txt</file>
     </qresource>
 </RCC>

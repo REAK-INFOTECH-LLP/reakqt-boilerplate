@@ -45,7 +45,7 @@ include($$PWD/qtlegal/legal.pri)
 
 #TEMPLATE = app
 #TARGET = sidepanel
-#QT += qml scxml --> 
+#QT += qml -->
 
 # DIRECT RESOURCES MUST BE ADDED IN A RESOURCE FILE
 #RESOURCES += \
@@ -58,8 +58,6 @@ include($$PWD/qtlegal/legal.pri)
 #    sidepanel.qml
 
 
-
-
 CONFIG += c++11
 
 SOURCES += \
@@ -67,8 +65,5 @@ SOURCES += \
 
 RESOURCES += \  # calculator-qml.qrc # RESOURCE FILE ... REMEMBER TO PUT Q_INIT_RESOURCE(calculator-qml); in _main() function
     privateProject.qrc
-
-#example MACHINE STATUS : REMOVE IT IN YOUR PROJECT
-STATECHARTS = statemachine.scxml
 
 
