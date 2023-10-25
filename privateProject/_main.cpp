@@ -9,8 +9,11 @@
 
 
 #ifdef DEFINED_PUBLIC_LIBS
-//test external library
-#include "mainLoopWdt.h"
+
+// Include any external dependencies here
+// #include "mainLoopWdt.h", No need to specify the path just the file name of the project in publicLibs
+
+
 #endif
 int _main(int argc, char *argv[]) //rename main to _main
 {
@@ -40,10 +43,6 @@ int _main(int argc, char *argv[]) //rename main to _main
     app.setApplicationVersion(BUILD_VERSION);
     QtLegal::instance()->setVersionData(app.applicationVersion(),BUILD_DATE,":/CHANGELOG.txt");
 
-    //example MACHINE STATUS
-    qmlRegisterType<CalculatorStateMachine>("CalculatorStateMachine", 1, 0,
-                                            "CalculatorStateMachine");
-
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;
@@ -51,9 +50,7 @@ int _main(int argc, char *argv[]) //rename main to _main
 
 
 #ifdef DEFINED_PUBLIC_LIBS
-    mainLoopWdt wdt(true,2000, 5000,0,&app); //Declare WWDT Instance
-    engine.rootContext()->setContextProperty("WDT", &wdt);
-    wdt.startWdt();//start WDT
+    // In case any public libs need to be set in the context or called
 #endif
 
 

@@ -1,13 +1,2 @@
 #YOUT QT CONFIG OPTIONS . MAIN PROJECT MUST USE THE SAME OPTIONS FOR RELINK
-QT += qml scxml
-
-
-
-
-
-
-
-
-
-
-
+QT += qml
